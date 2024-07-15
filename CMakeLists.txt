@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(my_hk_ros2)
+project(HikRobot_Camera_ROS2)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -29,8 +29,6 @@ find_package(OpenCV 4.2.0 REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(camera_info_manager REQUIRED)
 
-# find_package(hk_camera_interfaces REQUIRED) # 添加自定义消息和服务  ？？zcw是否为ros2的.idl文件生成的那个库？
-
 #用于告知编译器去哪里寻找需要包含的头文件。
 include_directories(
   ${OpenCV_INCLUDE_DIRS}   #OpenCV 库的头文件路径
@@ -43,16 +41,13 @@ LINK_DIRECTORIES(
 /opt/MVS/lib/64/
 )
 
-# add_executable(${PROJECT_NAME} src/hk_camera.cpp)
 add_executable(hk_camera src/hk_camera.cpp)
-# ament_target_dependencies(${PROJECT_NAME}
 ament_target_dependencies(hk_camera
   rclcpp
   std_msgs
   cv_bridge
   image_transport
 )
-# target_link_libraries(${PROJECT_NAME} # 指定一个可执行文件链接到的库文件。
 target_link_libraries(hk_camera
   ${OpenCV_LIBRARIES}
   #加载下面海康相机的.so文件并调用其API接口，实现对海康相机的控制和图像加载功能。
@@ -64,198 +59,8 @@ target_link_libraries(hk_camera
   X11
 )
 
-
-# add_executable(temp src/temp.cpp)
-# ament_target_dependencies(temp
-#   rclcpp
-#   std_msgs
-#   cv_bridge
-#   image_transport
-# )
-# target_link_libraries(temp
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-#下面这个是海康ros1驱动要链接的库文件。
-# target_link_libraries(${PROJECT_NAME}
-# ${catkin_LIBRARIES}
-# ${OpenCV_LIBRARIES}
-# GCBase_gcc421_v3_0
-# MvCameraControl
-# GenApi_gcc421_v3_0
-# MVGigEVisionSDK
-# log4cpp_gcc421_v3_0
-# MVRender
-# Log_gcc421_v3_0
-# MvUsb3vTL
-# MathParser_gcc421_v3_0
-# NodeMapData_gcc421_v3_0
-# MediaProcess
-# XmlParser_gcc421_v3_0
-# X11
-# )
-
-
-
-
-# add_executable(hk_camera_compressed_pub src/hk_camera_compressed_pub.cpp)
-# ament_target_dependencies(hk_camera_compressed_pub
-#   rclcpp
-#   std_msgs
-#   cv_bridge
-#   image_transport
-# )
-# target_link_libraries(hk_camera_compressed_pub
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-# add_executable(hk_camera_compressed_sub src/hk_camera_compressed_sub.cpp)
-# ament_target_dependencies(hk_camera_compressed_sub
-#   rclcpp
-#   std_msgs
-#   cv_bridge
-#   image_transport
-# )
-# target_link_libraries(hk_camera_compressed_sub
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-# # 用于测试发布压缩图像
-# add_executable(hk_camera_compressed_pub_test src/hk_camera_compressed_pub_test.cpp)
-# ament_target_dependencies(hk_camera_compressed_pub_test
-#   rclcpp
-#   std_msgs
-#   cv_bridge
-#   image_transport
-# )
-# target_link_libraries(hk_camera_compressed_pub_test
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-# add_executable(hk_camera_compressed_pub_test_reliable src/hk_camera_compressed_pub_test_reliable.cpp)
-# ament_target_dependencies(hk_camera_compressed_pub_test_reliable
-#   rclcpp
-#   std_msgs
-#   cv_bridge
-#   image_transport
-# )
-# target_link_libraries(hk_camera_compressed_pub_test_reliable
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-# # 用于测试订阅压缩图像
-# add_executable(hk_camera_compressed_sub_test src/hk_camera_compressed_sub_test.cpp)
-# ament_target_dependencies(hk_camera_compressed_sub_test
-#   rclcpp
-#   std_msgs
-#   cv_bridge
-#   image_transport
-# )
-# target_link_libraries(hk_camera_compressed_sub_test
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-# add_executable(hk_camera_compressed_sub_test_reliable src/hk_camera_compressed_sub_test_reliable.cpp)
-# ament_target_dependencies(hk_camera_compressed_sub_test_reliable
-#   rclcpp
-#   std_msgs
-#   cv_bridge
-#   image_transport
-# )
-# target_link_libraries(hk_camera_compressed_sub_test_reliable
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-# # 服务端
-# add_executable(hk_camera_server src/hk_camera_server.cpp)
-# ament_target_dependencies(hk_camera_server
-#   rclcpp
-#   std_msgs
-#   hk_camera_interfaces
-# )
-
-# target_link_libraries(hk_camera_server
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-# # 客户端
-# add_executable(hk_camera_client src/hk_camera_client.cpp)
-# ament_target_dependencies(hk_camera_client
-#   rclcpp
-#   std_msgs
-#   hk_camera_interfaces
-# )
-
-# target_link_libraries(hk_camera_client
-#   ${OpenCV_LIBRARIES}
-#   MvCameraControl
-#   MVGigEVisionSDK
-#   MVRender
-#   MvUsb3vTL
-#   MediaProcess
-#   X11
-# )
-
-
 install(TARGETS
-  hk_camera
-  # hk_camera_compressed_pub
-  # hk_camera_compressed_sub
-  # hk_camera_compressed_pub_test
-  # hk_camera_compressed_sub_test
-  # hk_camera_compressed_pub_test_reliable
-  # hk_camera_compressed_sub_test_reliable
-  # hk_camera_server
-  # hk_camera_client
-  
+  hk_camera  
   DESTINATION lib/${PROJECT_NAME}#指定了安装的目标路径
 )
 # 安装launch文件
@@ -270,12 +75,6 @@ FILES_MATCHING PATTERN "*.yaml"
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # uncomment the line when a copyright and license is not present in all source files
-  #set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # uncomment the line when this package is not in a git repo
-  #set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
 
