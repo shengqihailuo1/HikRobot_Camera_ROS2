@@ -17,7 +17,7 @@ hk_camera_node:
         # AutoExposureTimeUpper: 20000 
 
         ExposureAuto: 0
-        ExposureTime: 20000
+        ExposureTime: 25000
         AutoExposureTimeLower: 100
         AutoExposureTimeUpper: 20000 
 
@@ -33,19 +33,3 @@ hk_camera_node:
         TriggerMode: 0                          #触发模式。 0表示软触发模式。1表示硬触发模式。
         TriggerSource: 0
         LineSelector: 0
-
-
-# 格式：
-# <node_namespace_string>:  # optional
-#   <node1_name>:
-#     ros__parameters:
-#       <field_name>: <field_value>
-#       <parameter_namespace_string>:   # optional
-#         <field1_name>: <field1_value>
-#         <field2_name>: <field2_value>
-#   <node2_name>:
-#     ros__parameters:
-#       <field_name>: <field_value>
-#       <parameter_namespace_string>:   # optional
-#         <field1_name>: <field1_value>
-#         <field2_name>: <field2_value>

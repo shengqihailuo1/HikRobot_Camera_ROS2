@@ -21,6 +21,7 @@ int main(int argc, char **argv)
     //创建图像发布器
     image_transport::ImageTransport it(hk_camera);
     auto image_pub = it.advertiseCamera("/hk_camera/rgb", 1);
+
     //设置循环频率
     rclcpp::Rate loop_rate(60);//与曝光时间有关：如曝光时间设置为20ms，则最大发布频率为50。（最大发布频率为60）
 
@@ -49,7 +50,7 @@ int main(int argc, char **argv)
         cv_ptr->image = cv::Mat(MVS_cap.get_stImageInfo()->nHeight, MVS_cap.get_stImageInfo()->nWidth, CV_8UC3, MVS_cap.get_pData()); 
         ros_img_msg = *(cv_ptr->toImageMsg());
         camera_info_msg.header.frame_id = "hk_camera";
-        camera_info_msg.header.stamp = hk_camera->get_clock()->now(); // ros发出的时间不是快门时间
+        camera_info_msg.header.stamp = hk_camera->get_clock()->now(); // ros发出的时间,不是快门时间
         image_pub.publish(ros_img_msg,camera_info_msg);//发出图像和信息的话题
         RCLCPP_INFO(hk_camera->get_logger(), "/hk_camera/rgb publishing...");
     }
