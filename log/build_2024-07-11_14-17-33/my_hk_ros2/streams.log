@@ -1,0 +1,158 @@
+[0.008s] Invoking command in '/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/local/bin/cmake /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2 -DCMAKE_INSTALL_PREFIX=/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2
+[0.067s] -- The C compiler identification is GNU 11.4.0
+[0.106s] -- The CXX compiler identification is GNU 11.4.0
+[0.119s] -- Detecting C compiler ABI info
+[0.167s] -- Detecting C compiler ABI info - done
+[0.175s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.175s] -- Detecting C compile features
+[0.176s] -- Detecting C compile features - done
+[0.182s] -- Detecting CXX compiler ABI info
+[0.232s] -- Detecting CXX compiler ABI info - done
+[0.240s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.240s] -- Detecting CXX compile features
+[0.240s] -- Detecting CXX compile features - done
+[0.255s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.270s] [33mCMake Warning (dev) at /opt/ros/foxy/share/ament_cmake_core/cmake/core/python.cmake:22 (find_package):
+[0.270s]   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+[0.270s]   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+[0.271s]   the cmake_policy command to set the policy and suppress this warning.
+[0.271s] 
+[0.271s] Call Stack (most recent call first):
+[0.271s]   /opt/ros/foxy/share/ament_cmake_core/cmake/core/all.cmake:53 (include)
+[0.272s]   /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_core-extras.cmake:17 (include)
+[0.272s]   /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)
+[0.272s]   /opt/ros/foxy/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)
+[0.273s]   /opt/ros/foxy/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)
+[0.273s]   CMakeLists.txt:23 (find_package)
+[0.273s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.273s] [0m
+[0.320s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.321s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.501s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.541s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.546s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.637s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.662s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.728s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.771s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.772s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.774s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.824s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[0.824s] -- Looking for pthread_create in pthreads
+[0.859s] -- Looking for pthread_create in pthreads - not found
+[0.859s] -- Looking for pthread_create in pthread
+[0.906s] -- Looking for pthread_create in pthread - found
+[0.907s] -- Found Threads: TRUE  
+[1.021s] -- Found cv_bridge: 3.0.7 (/opt/ros/foxy/share/cv_bridge/cmake)
+[1.132s] -- Found image_transport: 2.4.0 (/opt/ros/foxy/share/image_transport/cmake)
+[1.185s] -- Found OpenCV: /usr (found suitable version "4.2.0", minimum required is "4.2.0") 
+[1.186s] -- Found camera_info_manager: 2.4.0 (/opt/ros/foxy/share/camera_info_manager/cmake)
+[1.200s] -- Setting yaml-cpp_DIR to: '/opt/ros/foxy/share/yaml_cpp_vendor/cmake/../../../opt/yaml_cpp_vendor/lib/cmake/yaml-cpp'
+[1.248s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[1.302s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.305s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.305s] -- Configured cppcheck include dirs: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/include
+[1.305s] -- Configured cppcheck exclude dirs and/or files: 
+[1.308s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.308s] -- Configured cpplint exclude dirs and/or files: 
+[1.308s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.309s] -- Added test 'lint_cmake' to check CMake code style
+[1.310s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[1.313s] -- Added test 'uncrustify' to check C / C++ code style
+[1.313s] -- Configured uncrustify additional arguments: 
+[1.313s] -- Added test 'xmllint' to check XML markup files
+[1.314s] -- Configuring done (1.3s)
+[1.329s] -- Generating done (0.0s)
+[1.331s] -- Build files have been written to: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2
+[1.337s] Invoked command in '/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/local/bin/cmake /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2 -DCMAKE_INSTALL_PREFIX=/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2
+[1.340s] Invoking command in '/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/local/bin/cmake --build /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2 -- -j12 -l12
+[1.356s] [ 50%] [32mBuilding CXX object CMakeFiles/hk_camera.dir/src/hk_camera.cpp.o[0m
+[2.917s] In file included from [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/hk_camera.cpp:8[m[K:
+[2.917s] [01m[K/opt/ros/foxy/include/image_transport/image_transport.h:41:89:[m[K [01;36m[Knote: [m[K‘[01m[K#pragma message: Warning: This header is deprecated. Use 'image_transport.hpp' instead[m[K’
+[2.917s]    41 | Warning: This header is deprecated. Use 'image_transport.hpp' instead"[01;36m[K)[m[K
+[2.917s]       |                                                                       [01;36m[K^[m[K
+[2.917s] 
+[2.963s] In file included from [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/hk_camera.cpp:9[m[K:
+[2.963s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:[m[K In constructor ‘[01m[Kcamera::Camera::Camera(rclcpp::Node&)[m[K’:
+[2.963s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:147:31:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kunsigned int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[2.963s]   147 |             for (int i = 0; [01;35m[Ki < stDeviceList.nDeviceNum[m[K; i++) {
+[2.963s]       |                             [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.965s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:[m[K In member function ‘[01m[Kbool camera::Camera::set(camera::CamerProperties, float)[m[K’:
+[2.965s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:469:52:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Kdouble[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[2.965s]   469 |                 printf("set TriggerMode OK! value=[01;35m[K%d[m[K\n",[32m[Kvalue[m[K);
+[2.965s]       |                                                   [01;35m[K~^[m[K    [32m[K~~~~~[m[K
+[2.965s]       |                                                    [01;35m[K|[m[K    [32m[K|[m[K
+[2.966s]       |                                                    [01;35m[Kint[m[K  [32m[Kdouble[m[K
+[2.966s]       |                                                   [32m[K%f[m[K
+[2.966s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:[m[K In static member function ‘[01m[Kstatic void* camera::Camera::HKWorkThread(void*)[m[K’:
+[2.966s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nHeight[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.966s]   559 |         MV_FRAME_OUT_INFO_EX stImageInfo = {0[01;35m[K}[m[K;
+[2.966s]       |                                              [01;35m[K^[m[K
+[2.966s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::enPixelType[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.966s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nFrameNum[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.966s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nDevTimeStampHigh[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.966s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nDevTimeStampLow[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.966s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nReserved0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nHostTimeStamp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nFrameLen[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nSecondCount[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nCycleCount[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nCycleOffset[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::fGain[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::fExposureTime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nAverageBrightness[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nRed[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nGreen[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nBlue[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nFrameCounter[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nTriggerIndex[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nInput[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nOutput[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nOffsetX[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nOffsetY[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nChunkWidth[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nChunkHeight[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.967s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nLostPacket[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nUnparsedChunkNum[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::UnparsedChunkList[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nExtendWidth[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nExtendHeight[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:559:46:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_FRAME_OUT_INFO_EX_::nReserved[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::nHeight[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s]   561 |         MV_CC_PIXEL_CONVERT_PARAM stConvertParam = {0[01;35m[K}[m[K;
+[2.968s]       |                                                      [01;35m[K^[m[K
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::enSrcPixelType[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::pSrcData[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::nSrcDataLen[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::enDstPixelType[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::pDstBuffer[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::nDstLen[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::nDstBufferSize[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[2.968s] [01m[K/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/src/../include/my_hk_ros2/hk_camera.hpp:561:54:[m[K [01;35m[Kwarning: [m[Kmissing initializer for member ‘[01m[K_MV_CC_PIXEL_CONVERT_PARAM_::nRes[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmissing-field-initializers-Wmissing-field-initializers]8;;[m[K]
+[4.508s] [100%] [32m[1mLinking CXX executable hk_camera[0m
+[4.798s] [100%] Built target hk_camera
+[4.801s] Invoked command in '/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/local/bin/cmake --build /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2 -- -j12 -l12
+[4.818s] Invoking command in '/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/local/bin/cmake --install /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2
+[4.820s] -- Install configuration: ""
+[4.820s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/lib/my_hk_ros2/hk_camera
+[4.821s] -- Set non-toolchain portion of runtime path of "/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/lib/my_hk_ros2/hk_camera" to ""
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/launch
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/launch/my_camera_launch.py
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/launch/my_hk_camera_launch.xml
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/launch/my_hk_camera（原来的，注释版）.launch
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/ament_index/resource_index/package_run_dependencies/my_hk_ros2
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/ament_index/resource_index/parent_prefix_path/my_hk_ros2
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/environment/ament_prefix_path.sh
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/environment/ament_prefix_path.dsv
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/environment/path.sh
+[4.821s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/environment/path.dsv
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/local_setup.bash
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/local_setup.sh
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/local_setup.zsh
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/local_setup.dsv
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/package.dsv
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/ament_index/resource_index/packages/my_hk_ros2
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/cmake/my_hk_ros2Config.cmake
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/cmake/my_hk_ros2Config-version.cmake
+[4.822s] -- Installing: /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/install/my_hk_ros2/share/my_hk_ros2/package.xml
+[4.823s] Invoked command in '/home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy CONDA_PROMPT_MODIFIER=(base) /usr/local/bin/cmake --install /home/sqhl/Desktops/my_code/my_hk_ros2/src/my_hk_ros2/build/my_hk_ros2

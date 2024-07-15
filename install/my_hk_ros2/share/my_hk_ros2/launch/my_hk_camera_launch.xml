@@ -1,0 +1,12 @@
+<launch>
+  <arg name="param_file" default="$(find my_hk_ros2)/config/my_camera_params.yaml" />
+  <rosparam file="$(arg param_file)" command="load" />
+  <node pkg="my_hk_ros2" exec="hk_camera" name="hk_camera_node" respawn="true" output="screen">
+  </node>
+</launch>
+
+<!-- <launch>
+    <rosparam file="$(find my_hk_ros2)/config/my_camera_params.yaml"/>
+    <node pkg="my_hk_ros2" exec="hk_camera" name="hk_camera_node" respawn="true" output="screen">
+    </node>
+</launch> -->

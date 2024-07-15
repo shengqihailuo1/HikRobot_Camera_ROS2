@@ -1,0 +1,4 @@
+source;share/my_hk_ros2/local_setup.bash
+source;share/my_hk_ros2/local_setup.dsv
+source;share/my_hk_ros2/local_setup.sh
+source;share/my_hk_ros2/local_setup.zsh

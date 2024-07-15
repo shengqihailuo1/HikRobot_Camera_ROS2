@@ -1,0 +1,24 @@
+<!-- <launch>
+
+    <!-- 加载yaml文件中的参数 -->
+    <rosparam file="$(find my_hk_ros2)/config/my_camera.yaml" command="load"/>
+
+    <!--pkg指出ROS应该运行哪个pkg,type是可执行文件的名称,name则是可以任意给出的，它覆盖了原文件中ros::init指定的node的名字 -->
+    <node pkg="my_hk_ros2" type="my_hk_ros2" name="hk_camera_node" respawn="true" output="screen" /> 
+
+</launch> -->
+
+
+上面的看起来是ros1的，要改成ros2需要按照以下：
+https://docs.ros.org/en/foxy/How-To-Guides/Launch-files-migration-guide.html
+type 属性现在是 exec 。
+
+
+
+
+<!-- <launch>
+    <!-- <rosparam command="load" file="$(find my_hk_ros2)/config/my_camera.yaml"/> -->
+    <node pkg="my_hk_ros2" exec="hk_camera" name="hk_camera_node" respawn="true" output="screen"> 
+        <param from="config/my_camera.yaml"/>
+    </node>
+</launch> -->
