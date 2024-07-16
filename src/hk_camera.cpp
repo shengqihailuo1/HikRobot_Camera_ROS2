@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     auto image_pub = it.advertiseCamera("/hk_camera/rgb", 1);
 
     //设置循环频率
-    rclcpp::Rate loop_rate(60);//与曝光时间有关：如曝光时间设置为20ms，则最大发布频率为50。（最大发布频率为60）
+    rclcpp::Rate loop_rate(30);//与曝光时间有关：如曝光时间设置为20ms，则最大发布频率为50。
 
     sensor_msgs::msg::Image ros_img_msg;
     sensor_msgs::msg::CameraInfo camera_info_msg;
@@ -47,7 +47,23 @@ int main(int argc, char **argv)
             continue;
         }
         image_empty_count = 0; 
-        cv_ptr->image = cv::Mat(MVS_cap.get_stImageInfo()->nHeight, MVS_cap.get_stImageInfo()->nWidth, CV_8UC3, MVS_cap.get_pData()); 
+
+		// 从设备获取的源数据    
+		MVS_cap.get_stConvertParam()->nWidth = MVS_cap.get_stImageInfo()->nWidth;              // 图像宽 
+		MVS_cap.get_stConvertParam()->nHeight = MVS_cap.get_stImageInfo()->nHeight;            // 图像高 
+		MVS_cap.get_stConvertParam()->pSrcData = MVS_cap.get_pData();                          // 输入数据缓存  
+		MVS_cap.get_stConvertParam()->nSrcDataLen = MVS_cap.get_stImageInfo()->nFrameLen;      // 输入数据大小 
+		MVS_cap.get_stConvertParam()->enSrcPixelType = MVS_cap.get_stImageInfo()->enPixelType; // 输入数据像素格式 
+		// 转换像素格式后的目标数据
+		MVS_cap.get_stConvertParam()->enDstPixelType = PixelType_Gvsp_BGR8_Packed;             // 输出像素格式 
+		MVS_cap.get_stConvertParam()->pDstBuffer = MVS_cap.get_p_DataForRGB();                 // 输出数据缓存 
+		MVS_cap.get_stConvertParam()->nDstBufferSize = 3 * MVS_cap.get_stImageInfo()->nHeight * MVS_cap.get_stImageInfo()->nWidth; // 输出缓存大小 
+		nRet = MV_CC_ConvertPixelType(MVS_cap.get_handle(), MVS_cap.get_stConvertParam());
+        if (MV_OK != nRet){
+            RCLCPP_INFO(hk_camera->get_logger(), "-----ERROR: MV_CC_ConvertPixelType failed!-----");
+        }
+
+        cv_ptr->image = cv::Mat(MVS_cap.get_stImageInfo()->nHeight, MVS_cap.get_stImageInfo()->nWidth, CV_8UC3, MVS_cap.get_p_DataForRGB()); 
         ros_img_msg = *(cv_ptr->toImageMsg());
         camera_info_msg.header.frame_id = "hk_camera";
         camera_info_msg.header.stamp = hk_camera->get_clock()->now(); // ros发出的时间,不是快门时间

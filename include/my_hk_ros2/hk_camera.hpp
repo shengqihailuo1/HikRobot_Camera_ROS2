@@ -30,6 +30,7 @@ namespace camera
         CAP_TRIGGER_MODE,      //外部触发
         CAP_TRIGGER_SOURCE,    //触发源
         CAP_LINE_SELECTOR,     //触发线
+        CAP_BalanceRatio,      //白平衡
     };
 
 
@@ -51,6 +52,12 @@ namespace camera
         }
         void *get_handle() const{
              return handle;
+        }
+        unsigned char* get_p_DataForRGB(){
+            return p_DataForRGB;
+        }
+        MV_CC_PIXEL_CONVERT_PARAM* get_stConvertParam(){
+            return &stConvertParam;
         }
 
 
@@ -75,6 +82,7 @@ namespace camera
         int TriggerMode;
         int TriggerSource;
         int LineSelector;
+        int BalanceRatio;
 
         void *handle;
         int nRet;
@@ -85,6 +93,8 @@ namespace camera
         int image_empty_count = 0; // 连续空图帧数
         unsigned int nDataSize; //缓冲区的大小
         unsigned char *pData; // 内存指针，指向原始图像数据的内存位置
+        unsigned char *p_DataForRGB;//内存指针，指向“将pData数据转化为rgb8格式“后的内存位置
+        MV_CC_PIXEL_CONVERT_PARAM stConvertParam = { 0 };         // 定义像素格式转换输入输出参数
         MV_FRAME_OUT_INFO_EX stImageInfo = {0};//该结构体用于存储图像的相关信息，例如图像宽度、高度、帧率等。
     };
 
@@ -112,6 +122,7 @@ namespace camera
         node.declare_parameter<int>("ExposureTime", 0);
         node.declare_parameter<int>("AutoExposureTimeLower", 0);
         node.declare_parameter<int>("AutoExposureTimeUpper", 0);
+        node.declare_parameter<int>("BalanceRatio", 0);
 
         // 从配置文件yaml中读取参数
         node.get_parameter("width", width);
@@ -133,6 +144,7 @@ namespace camera
         node.get_parameter("ExposureTime", ExposureTime);
         node.get_parameter("AutoExposureTimeLower", AutoExposureTimeLower);
         node.get_parameter("AutoExposureTimeUpper", AutoExposureTimeUpper);
+        node.get_parameter("BalanceRatio",BalanceRatio);
 
         // 枚举设备 
         MV_CC_DEVICE_INFO_LIST stDeviceList;
@@ -193,6 +205,7 @@ namespace camera
         this->set(CAP_SATURATION_ENABLE, SaturationEnable);
         if (SaturationEnable)
             this->set(CAP_SATURATION, Saturation);
+        this->set(CAP_BalanceRatio,BalanceRatio);
         this->set(CAP_TRIGGER_MODE, TriggerMode);
         // this->set(CAP_TRIGGER_SOURCE, TriggerSource);
         // this->set(CAP_LINE_SELECTOR, LineSelector);
@@ -208,11 +221,16 @@ namespace camera
         //********** 设置图像格式 （这里要单独拿出来，不要用set函数。）**********/
         nRet = MV_CC_SetEnumValue(handle, "PixelFormat", 0x02180014);
         if (MV_OK == nRet) {
-            printf("set PixelFormat OK ! value = RGB\n");
+            MVCC_ENUMVALUE t = {0};
+            nRet = MV_CC_GetEnumValue(handle, "PixelFormat", &t);
+            if (MV_OK == nRet && t.nCurValue==35127316){
+                printf("set PixelFormat OK ! value = RGB\n");
+            }else{
+                    printf("get PixelFormat fail! nRet [%x]\n", nRet);
+            }
         } else {
-            printf("MV_CC_SetPixelFormat fail! nRet [%x]\n", nRet);
+            printf("set PixelFormat fail! nRet [%x]\n", nRet);
         }
-
 
         // 开始取流
         nRet = MV_CC_StartGrabbing(handle);
@@ -239,6 +257,11 @@ namespace camera
         if (NULL == pData) {
             printf(" pData == NULL \n");
         }
+
+        p_DataForRGB = (unsigned char*)malloc(height * width * 3);
+
+        // 像素格式转换
+		memset(&stConvertParam, 0, sizeof(MV_CC_PIXEL_CONVERT_PARAM));
 
         memset(&stImageInfo, 0, sizeof(MV_FRAME_OUT_INFO_EX));//初始化为0，用于存储图像的相关信息，例如图像宽度、高度、帧率等。        
     }
@@ -501,6 +524,19 @@ namespace camera
             else
             {
                 printf("Set LineSelector Failed! nRet = [%x]\n\n", nRet);
+            }
+            break;
+        }
+        case CAP_BalanceRatio:
+        {
+            nRet = MV_CC_SetEnumValue(handle, "BalanceWhiteAuto", value);
+            if (MV_OK == nRet)
+            {
+                printf("set BalanceWhiteAuto OK! value = %f\n",value);
+            }
+            else
+            {
+                printf("Set BalanceWhiteAuto Failed! nRet = [%x]\n\n", nRet);
             }
             break;
         }

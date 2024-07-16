@@ -5,7 +5,9 @@ hk_camera_node:
         height: 1024                        #图像高度
         Offset_x: 0                         #X方向偏置
         Offset_y: 0                         #Y方向偏置
+
         GainAuto: 2                         #亮度的固定增益
+        BalanceRatio: 0                        #白平衡
 
         # ExposureAuto： 0 代表 Off（使用固定曝光时间）, 2 代表 Continues
         #（1）固定曝光这样设置：
@@ -17,17 +19,17 @@ hk_camera_node:
         # AutoExposureTimeUpper: 20000 
 
         ExposureAuto: 0
-        ExposureTime: 25000
+        ExposureTime: 20000
         AutoExposureTimeLower: 100
         AutoExposureTimeUpper: 20000 
 
         FrameRateEnable: true                   #使能帧率
         FrameRate: 210                          #设置帧率
 
-        GammaEnable: true                       #使能伽马因子
+        GammaEnable: false                       #使能伽马因子
         Gamma: 0.7                              #设置伽马因子
 
-        SaturationEnable: false                 #使能饱和度
+        SaturationEnable: true                 #使能饱和度
         Saturation: 128                         #设置饱和度
 
         TriggerMode: 0                          #触发模式。 0表示软触发模式。1表示硬触发模式。
