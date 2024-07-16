@@ -16,7 +16,7 @@ source install/setup.bash
 ```
 # NOTE：Before starting the node, you need to look up the Hikon camera serial number and replace "expect_serial_number" in my_camera.yaml
 
-ros2 run HikRobot_Camera_ROS2 hk_camera --ros-args --params-file config/my_camera.yaml
+ros2 run HikRobot_Camera_ROS2 hk_camera --ros-args --params-file HikRobot_Camera_ROS2/config/my_camera.yaml
 # or
 ros2 launch HikRobot_Camera_ROS2 my_camera_launch.py
 ```
